@@ -72,7 +72,7 @@ opt_QRF <- function(X, Y){
   qrf <- list()
   mse <- numeric()
   for(j in 1:ncol(X)){
-    qrf[[j]] <- quantregForest(x=X, y=Y, nodesize=5,mtry=j,ntree=300)
+    qrf[[j]] <- quantregForest(x=X, y=Y, nodesize=5,mtry=j,ntree=1000)
     mse[j] <- mean(qrf[[j]]$mse)
     Mse[j,]<-mse[j]
   }
